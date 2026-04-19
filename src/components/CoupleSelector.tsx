@@ -36,7 +36,8 @@ export default function CoupleSelector({ onCoupleSelect }: CoupleSelectorProps) 
         backgroundImage: "url('/bgs/Background.jpeg')", 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundAttachment: 'fixed',
+        fontFamily: 'Neucha, cursive'
       }}
     >
 
@@ -51,7 +52,7 @@ export default function CoupleSelector({ onCoupleSelect }: CoupleSelectorProps) 
       >
         <div className="inline-flex items-center gap-3 mb-4">
           <Heart className="w-7 h-7 sm:w-9 sm:h-9 text-rose-500 fill-rose-500" />
-          <h1 className="text-4xl sm:text-5xl font-black tracking-widest text-[#F43F5E] drop-shadow-lg">FLAMES</h1>
+          <h1 className="text-4xl sm:text-5xl font-black tracking-widest text-[#650000] drop-shadow-lg">FLAMES</h1>
           <Heart className="w-7 h-7 sm:w-9 sm:h-9 text-rose-500 fill-rose-500 drop-shadow" />
         </div>
         <p className="text-base sm:text-lg text-rose-100 font-medium drop-shadow">
@@ -60,7 +61,7 @@ export default function CoupleSelector({ onCoupleSelect }: CoupleSelectorProps) 
       </motion.div>
 
       {loading && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3 text-[#F43F5E]">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-3 text-[#650000]">
           <Loader2 className="w-5 h-5 animate-spin text-rose-400" />
           <span className="text-sm font-medium">Loading couples...</span>
         </motion.div>
@@ -119,8 +120,8 @@ export default function CoupleSelector({ onCoupleSelect }: CoupleSelectorProps) 
                 </div>
 
                 <div className="flex-1 text-left min-w-0">
-                  <p className="text-lg sm:text-xl font-bold text-[#F43F5E] drop-shadow truncate">{couple.coupleName}</p>
-                  <p className="text-sm text-[#F43F5E]/80 truncate">
+                  <p className="text-lg sm:text-xl font-bold text-[#650000] drop-shadow truncate">{couple.coupleName}</p>
+                  <p className="text-sm text-[#650000]/80 truncate">
                     {couple.maleName} &amp; {couple.femaleName}
                   </p>
                 </div>

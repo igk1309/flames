@@ -113,13 +113,13 @@ export default function FlamesStrikeAnimation({
                       ? 'bg-white/10 text-white border-white/20'
                       : 'bg-white text-rose-500 border-white'
                   }`}
-                  style={{ fontFamily: 'Caveat, cursive' }}
+                  style={{ fontFamily: 'Neucha, cursive' }}
                 >
                   {letter}
                 </motion.div>
                 
                 <motion.span 
-                  className={`text-[10px] sm:text-xs font-bold uppercase tracking-wider text-center max-w-[64px] leading-tight ${isStruck ? 'text-[#F43F5E]/40' : 'text-[#F43F5E] drop-shadow-md'}`}
+                  className={`text-[10px] sm:text-xs font-bold uppercase tracking-wider text-center max-w-[64px] leading-tight ${isStruck ? 'text-[#650000]/40' : 'text-[#650000] drop-shadow-md'}`}
                   style={{ opacity: isStruck ? 0.5 : 1 }}
                 >
                   {FLAMES_MEANINGS[letter]}
@@ -158,7 +158,7 @@ export default function FlamesStrikeAnimation({
             transition={{ duration: 0.5 }}
             className="w-full max-w-sm bg-white/30 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/40 p-6 sm:p-8 mb-8 relative z-10"
           >
-            <div className="grid grid-cols-2 gap-6 mb-6 text-[#F43F5E]">
+            <div className="grid grid-cols-2 gap-6 mb-6 text-[#650000]">
               <div className="text-center">
                 <p className="text-[10px] uppercase tracking-wider font-bold mb-1 opacity-80">Common Letters</p>
                 <p className="text-4xl font-black drop-shadow">{gameData.commonLetters}</p>
@@ -170,13 +170,13 @@ export default function FlamesStrikeAnimation({
             </div>
 
             <div className="pt-6 border-t border-white/30">
-              <div className="flex justify-between text-[10px] text-[#F43F5E]/90 font-bold uppercase tracking-widest mb-3">
+              <div className="flex justify-between text-[10px] text-[#650000]/90 font-bold uppercase tracking-widest mb-3">
                 <span>Eliminations</span>
                 <span>{currentStep} / {gameData.steps.length}</span>
               </div>
               <div className="w-full bg-white/20 rounded-full h-3 overflow-hidden shadow-inner p-0.5 border border-white/10">
                 <motion.div
-                  className="h-full rounded-full bg-[#F43F5E] shadow-sm"
+                  className="h-full rounded-full bg-[#650000] shadow-sm"
                   initial={{ width: 0 }}
                   animate={{ width: `${progress}%` }}
                   transition={{ duration: 0.5 }}
@@ -191,7 +191,7 @@ export default function FlamesStrikeAnimation({
             animate={{ opacity: 1, y: 0 }}
             className="text-center relative z-10 -mt-16 mb-8 flex flex-col items-center"
           >
-            <p className="text-base sm:text-lg text-[#F43F5E]/90 font-bold uppercase tracking-widest mb-3 drop-shadow">Your relationship is</p>
+            <p className="text-base sm:text-lg text-[#650000]/90 font-bold uppercase tracking-widest mb-3 drop-shadow">Your relationship is</p>
             <motion.div 
               className="bg-white/30 backdrop-blur-md px-10 py-5 rounded-[2rem] border border-white/40 shadow-xl inline-block"
               initial={{ scale: 0.8 }}
@@ -199,8 +199,8 @@ export default function FlamesStrikeAnimation({
               transition={{ duration: 0.6, type: 'spring' }}
             >
               <p 
-                className="text-6xl sm:text-7xl font-black text-[#F43F5E] drop-shadow-md leading-tight" 
-                style={{ fontFamily: 'Caveat, cursive' }}
+                className="text-6xl sm:text-7xl font-black text-[#650000] drop-shadow-md leading-tight" 
+                style={{ fontFamily: 'Neucha, cursive' }}
               >
                 {gameData.result}
               </p>

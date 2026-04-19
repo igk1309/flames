@@ -35,7 +35,8 @@ export default function InputSection({
         backgroundImage: "url('/bgs/Background.jpeg')", 
         backgroundSize: 'cover', 
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
+        backgroundAttachment: 'fixed',
+        fontFamily: 'Neucha, cursive'
       }}
     >
 
@@ -54,7 +55,7 @@ export default function InputSection({
           >
             <Heart className="w-8 h-8 text-rose-400 fill-rose-400 drop-shadow" />
           </motion.div>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#F43F5E] tracking-tight drop-shadow-md">FLAMES</h2>
+          <h2 className="text-3xl sm:text-4xl font-black text-[#650000] tracking-tight drop-shadow-md">FLAMES</h2>
           <p className="text-rose-100 text-sm sm:text-base mt-1 drop-shadow">Confirm the names to reveal your fate</p>
         </div>
 
@@ -69,7 +70,7 @@ export default function InputSection({
               onChange={(e) => { setMaleName(e.target.value); setError(''); }}
               onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
               placeholder="Enter name"
-              className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 focus:border-white focus:bg-white/30 focus:outline-none text-[#F43F5E] text-base font-medium transition-all placeholder:text-[#F43F5E]/50"
+              className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 focus:border-white focus:bg-white/30 focus:outline-none text-[#650000] text-base font-medium transition-all placeholder:text-[#650000]/50"
             />
           </div>
 
@@ -89,7 +90,7 @@ export default function InputSection({
               onChange={(e) => { setFemaleName(e.target.value); setError(''); }}
               onKeyDown={(e) => e.key === 'Enter' && handleSubmit()}
               placeholder="Enter name"
-              className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 focus:border-white focus:bg-white/30 focus:outline-none text-[#F43F5E] text-base font-medium transition-all placeholder:text-[#F43F5E]/50"
+              className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 focus:border-white focus:bg-white/30 focus:outline-none text-[#650000] text-base font-medium transition-all placeholder:text-[#650000]/50"
             />
           </div>
 

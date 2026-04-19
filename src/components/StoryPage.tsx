@@ -49,8 +49,8 @@ export default function StoryPage({ onComplete }: StoryPageProps) {
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * LINE_DELAY + 0.3, duration: 0.55 }}
-                style={{ fontFamily: 'Caveat, cursive' }}
-                className={`text-2xl sm:text-4xl font-semibold text-[#F43F5E] drop-shadow-lg leading-snug ${line === '' ? 'h-4 sm:h-6' : ''}`}
+                style={{ fontFamily: 'Neucha, cursive' }}
+                className={`text-xl sm:text-3xl font-semibold text-[#650000] drop-shadow-lg leading-snug ${line === '' ? 'h-4 sm:h-6' : ''}`}
               >
                 {line === '' ? '\u00A0' : line}
               </motion.p>

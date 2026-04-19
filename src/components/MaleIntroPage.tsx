@@ -19,7 +19,7 @@ export default function MaleIntroPage({ maleName, maleImage, onComplete }: MaleI
   return (
     <div
       className="w-full h-full flex flex-col overflow-hidden"
-      style={{ backgroundImage: "url('/bgs/background3.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ backgroundImage: "url('/bgs/background3.jpeg')", backgroundSize: 'cover', backgroundPosition: 'center', fontFamily: 'Neucha, cursive' }}
     >
       <div className="w-full h-full flex flex-col">
         <motion.div 
@@ -37,8 +37,8 @@ export default function MaleIntroPage({ maleName, maleImage, onComplete }: MaleI
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 2.3 }}
-            style={{ fontFamily: 'Caveat, cursive' }}
-            className="text-5xl sm:text-7xl font-bold text-[#F43F5E] drop-shadow-2xl text-center leading-tight"
+            style={{ fontFamily: 'Neucha, cursive' }}
+            className="text-3xl sm:text-5xl font-bold text-[#650000] drop-shadow-2xl text-center leading-tight"
           >
             Ek ladka tha…
           </motion.h2>
@@ -58,7 +58,7 @@ export default function MaleIntroPage({ maleName, maleImage, onComplete }: MaleI
               transition={{ delay: 3.5, duration: 0.5 }}
               className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white/30 backdrop-blur-md px-8 py-3 rounded-full border border-white/40 shadow-xl"
             >
-              <span style={{ fontFamily: 'Caveat, cursive' }} className="text-3xl sm:text-4xl font-bold text-[#F43F5E] drop-shadow">
+              <span style={{ fontFamily: 'Neucha, cursive' }} className="text-3xl sm:text-4xl font-bold text-[#650000] drop-shadow">
                 {maleName}
               </span>
             </motion.div>
