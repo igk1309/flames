@@ -14,7 +14,7 @@ interface ResultCardProps {
 const resultMessages: Record<string, string> = {
   Friends: "Best of friends — a bond that lasts a lifetime.",
   Lovers: "True love! A romance written in the stars.",
-  Affection: "In your little gestures, I find my forever.",
+  Affection: "\nIn your little gestures,\nI find my forever",
   Marriage: "Marriage — a lifetime of love.",
   'Enemy': "\nWhat started as a game, labelled them as enemies-\n" +
     "But destiny smiled quietly-\n" +
@@ -48,7 +48,7 @@ export default function ResultCard({
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
-          className="text-center mb-6"
+          className="text-center mb-4 sm:mb-6"
         >
           {/* <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-[#650000]/80 mb-0 drop-shadow">Your result</p>
           <h1
@@ -57,7 +57,7 @@ export default function ResultCard({
           >
             {gameData.result}
           </h1> */}
-          <p className="text-[#650000] text-lg sm:text-xl max-w-2xl mx-auto leading-tight drop-shadow font-black tracking-tight whitespace-pre-line">
+          <p className="text-[#650000] text-xl sm:text-2xl max-w-2xl mx-auto leading-snug drop-shadow font-black tracking-normal whitespace-pre-line">
             {resultMessages[gameData.result]}
           </p>
         </motion.div>
@@ -67,13 +67,13 @@ export default function ResultCard({
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="w-full max-w-sm sm:max-w-md mb-12"
+            className="w-full max-w-md sm:max-w-lg mb-6 sm:mb-8"
           >
             <img
               src={caricatureImage}
               alt="Couple caricature"
               className="w-full rounded-2xl shadow-xl object-cover border-4 border-white"
-              style={{ height: '640px', objectPosition: 'top' }}
+              style={{ height: '560px', objectPosition: 'top' }}
             />
           </motion.div>
         )}
@@ -82,14 +82,16 @@ export default function ResultCard({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="w-full max-w-xl bg-white/20 backdrop-blur-lg border border-white/40 rounded-2xl p-4 sm:p-6 text-center shadow-2xl"
+          className="w-full max-w-xl text-center"
         >
-          <p className="text-[#650000] text-lg sm:text-xl font-black drop-shadow tracking-tight whitespace-pre-line" style={{ fontFamily: 'Neucha, cursive' }}>
-            <span className="text-2xl sm:text-3xl">Happy Anniversary</span>
+          <p className="text-[#650000] text-xl sm:text-2xl font-black drop-shadow tracking-tight whitespace-pre-line leading-tight" style={{ fontFamily: 'Neucha, cursive' }}>
+            <span className="text-3xl sm:text-4xl">Happy Anniversary</span>
+            {"\n\n"}
+            "You + Me = Everything Feels Right "
+            {"\n\n"}
+            Cheers to another year of
             {"\n"}
-            Real love = Thodi si nok- jhok{"\n"}+ unlimited Care
-            {"\n"}
-            Cheers to another year of wedded bliss.
+            wedded bliss
           </p>
         </motion.div>
       </div>

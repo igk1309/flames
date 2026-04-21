@@ -165,7 +165,7 @@ export default function FlamesStrikeAnimation({
               </div>
               <div className="text-center">
                 <p className="text-[10px] uppercase tracking-wider font-bold mb-1 opacity-80">Count</p>
-                <p className="text-4xl font-black drop-shadow">{gameData.totalCount}</p>
+                <p className="text-4xl font-black drop-shadow">{gameData.originalCount}</p>
               </div>
             </div>
 
@@ -191,7 +191,7 @@ export default function FlamesStrikeAnimation({
             animate={{ opacity: 1, y: 0 }}
             className="text-center relative z-10 -mt-16 mb-8 flex flex-col items-center"
           >
-            <p className="text-base sm:text-lg text-[#650000]/90 font-bold uppercase tracking-widest mb-3 drop-shadow">Your relationship is</p>
+            <p className="text-base sm:text-lg text-[#650000]/90 font-bold uppercase tracking-widest mb-3 drop-shadow">Your result is</p>
             <motion.div 
               className="bg-white/30 backdrop-blur-md px-10 py-5 rounded-[2rem] border border-white/40 shadow-xl inline-block"
               initial={{ scale: 0.8 }}

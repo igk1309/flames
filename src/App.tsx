@@ -28,8 +28,8 @@ export default function App() {
     setStage('input');
   };
 
-  const handleStartAnimation = (player1: string, player2: string) => {
-    const gameData = calculateFLAMES(player1, player2);
+  const handleStartAnimation = (player1: string, player2: string, targetResult?: FlamesResult) => {
+    const gameData = calculateFLAMES(player1, player2, targetResult);
     setGameState({ couple: couple!, gameData });
     setStage('maleIntro');
   };

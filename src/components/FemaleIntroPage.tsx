@@ -45,7 +45,7 @@ export default function FemaleIntroPage({ femaleName, femaleImage, onComplete }:
             className="relative"
           >
             <div className="w-80 h-[480px] sm:w-[320px] sm:h-[480px] rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
-              <img src={femaleImage} alt={femaleName} className="w-full h-full object-cover object-top" />
+              <img src={femaleImage} alt={femaleName} className="w-full h-full object-cover object-[center_top]" />
             </div>
             <motion.div
               initial={{ opacity: 0, y: 10 }}

@@ -6,6 +6,7 @@ export interface FlamesGameData {
   result: FlamesResult;
   commonLetters: number;
   totalCount: number;
+  originalCount: number;
   steps: number[];
 }
 
@@ -47,7 +48,9 @@ export function calculateCommonLetters(str1: string, str2: string): number {
   return commonCount;
 }
 
-export function calculateFLAMES(player1: string, player2: string): FlamesGameData {
+export const FLAMES_RESULTS: FlamesResult[] = ['Friends', 'Lovers', 'Affection', 'Marriage', 'Enemy', 'Soul Mates'];
+
+export function calculateFLAMES(player1: string, player2: string, targetResult?: FlamesResult): FlamesGameData {
   if (!player1.trim() || !player2.trim()) {
     throw new Error('Both names are required');
   }
@@ -56,9 +59,46 @@ export function calculateFLAMES(player1: string, player2: string): FlamesGameDat
   const s2 = player2.toLowerCase().replace(/\s/g, '');
 
   const commonLetters = calculateCommonLetters(player1, player2);
-  const totalCount = s1.length + s2.length - 2 * commonLetters;
+  const naturalCount = s1.length + s2.length - 2 * commonLetters;
+  let totalCount = naturalCount;
 
-  const flames = ['Friends', 'Lovers', 'Affection', 'Marriage', 'Enemy', 'Soul Mates'] as FlamesResult[];
+  // Helper to simulate FLAMES for a given count
+  const simulate = (count: number): FlamesResult => {
+    const arr = [...FLAMES_RESULTS];
+    let idx = 0;
+    while (arr.length > 1) {
+      idx = (idx + count - 1) % arr.length;
+      arr.splice(idx, 1);
+      if (arr.length > 1) idx = idx % arr.length;
+    }
+    return arr[0];
+  };
+
+  // If a target result is requested, adjust the totalCount to hit it
+  if (targetResult && FLAMES_RESULTS.includes(targetResult)) {
+    let trialCount = totalCount || 1;
+    let found = false;
+    // Iterate to find a count that yields the target result
+    for (let i = 0; i < 20; i++) {
+      if (simulate(trialCount) === targetResult) {
+        totalCount = trialCount;
+        found = true;
+        break;
+      }
+      trialCount++;
+    }
+    // If not found in simple sequence, find any count that works
+    if (!found) {
+      for (let i = 1; i <= 100; i++) {
+        if (simulate(i) === targetResult) {
+          totalCount = i;
+          break;
+        }
+      }
+    }
+  }
+
+  const flames = [...FLAMES_RESULTS];
   let currentIndex = 0;
   const steps: number[] = [];
 
@@ -77,6 +117,7 @@ export function calculateFLAMES(player1: string, player2: string): FlamesGameDat
     result: flames[0],
     commonLetters,
     totalCount,
+    originalCount: naturalCount,
     steps,
   };
 }
